@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journey | Поиск экспедиций</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="search-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body class="search-page">
+    <div class="noise-overlay"></div>
+    <div class="glow-sphere"></div>
+
+    <nav class="navbar glass">
+        <div class="logo"><a href="index.html" style="text-decoration:none; color:inherit;">JOURNEY<span>/</span></a></div>
+        <a href="index.html" class="nav-back-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="m15 18-6-6 6-6"/>
+            </svg>
+            <span>На главную</span>
+        </a>
+    </nav>
+
+    <header class="search-hero">
+        <div class="container">
+            <h1 class="hero-title">FIND YOUR <span class="accent-text">PATH</span></h1>
+            
+            <div class="search-box-wrap glass">
+                <input type="text" id="mainSearch" placeholder="Название или локация...">
+                <div class="search-info">Найдено: <span id="resultsCount">10</span></div>
+            </div>
+
+            <div class="filter-group">
+                <button class="filter-btn active" data-cat="all">Все</button>
+                <button class="filter-btn" data-cat="горы">🏔️ Горы</button>
+                <button class="filter-btn" data-cat="вода">🌊 Вода</button>
+                <button class="filter-btn" data-cat="лес">🌲 Леса</button>
+            </div>
+        </div>
+    </header>
+
+    <main id="searchGrid" class="container">
+        <div class="modern-card" data-title="Альпийский поход" data-category="горы">
+            <div class="card-visual"><img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800" alt=""><div class="card-tag">MOUNTAIN</div></div>
+            <div class="card-info"><h3>Альпийский поход</h3><p>Швейцария • 6 дней</p></div>
+        </div>
+
+        <div class="modern-card" data-title="Озерный релакс" data-category="вода">
+            <div class="card-visual"><img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800" alt=""><div class="card-tag">WATER</div></div>
+            <div class="card-info"><h3>Озерный релакс</h3><p>Италия • 4 дня</p></div>
+        </div>
+
+        <div class="modern-card" data-title="Тропический туман" data-category="лес">
+            <div class="card-visual"><img src="https://images.unsplash.com/photo-1534067783941-51c9c23ecefd?w=800" alt=""><div class="card-tag">FOREST</div></div>
+            <div class="card-info"><h3>Тропический туман</h3><p>Бразилия • 10 дней</p></div>
+        </div>
+
+        <div class="modern-card" data-title="Пик Эвереста" data-category="горы">
+            <div class="card-visual"><img src="data:image/webp;base64,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" alt=""><div class="card-tag">MOUNTAIN</div></div>
+            <div class="card-info"><h3>Пик Эвереста</h3><p>Непал • 14 дней</p></div>
+        </div>
+
+        <div class="modern-card" data-title="Лазурный берег" data-category="вода">
+            <div class="card-visual"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800" alt=""><div class="card-tag">WATER</div></div>
+            <div class="card-info"><h3>Лазурный берег</h3><p>Мальдивы • 8 дней</p></div>
+        </div>
+
+        <div class="modern-card" data-title="Секвойи-гиганты" data-category="лес">
+            <div class="card-visual"><img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800" alt=""><div class="card-tag">FOREST</div></div>
+            <div class="card-info"><h3>Секвойи-гиганты</h3><p>США • 5 дней</p></div>
+        </div>
+
+        <div class="modern-card" data-title="Красные скалы" data-category="горы">
+            <div class="card-visual"><img src="https://th.bing.com/th/id/OIP.B6LGLGgHcvVfz7JkJm24fwHaEo?w=268&h=180&c=7&r=0&o=7&pid=1.7&rm=3" alt=""><div class="card-tag">MOUNTAIN</div></div>
+            <div class="card-info"><h3>Красные скалы</h3><p>Аризона • 4 дня</p></div>
+        </div>
+
+        <div class="modern-card" data-title="Сибирская тайга" data-category="лес">
+            <div class="card-visual"><img src="https://th.bing.com/th/id/OIP.vkUrhMrfvHdSGJGfC49l6AHaE7?w=257&h=180&c=7&r=0&o=7&pid=1.7&rm=3" alt=""><div class="card-tag">FOREST</div></div>
+            <div class="card-info"><h3>Сибирская тайга</h3><p>Россия • 12 дней</p></div>
+        </div>
+
+        <div class="modern-card" data-title="Балийский водопад" data-category="вода">
+            <div class="card-visual"><img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=800" alt=""><div class="card-tag">WATER</div></div>
+            <div class="card-info"><h3>Балийский водопад</h3><p>Индонезия • 3 дня</p></div>
+        </div>
+
+        <div class="modern-card" data-title="Канадский каньон" data-category="горы">
+            <div class="card-visual"><img src="https://images.unsplash.com/photo-1503756234508-e32369269deb?w=800" alt=""><div class="card-tag">MOUNTAIN</div></div>
+            <div class="card-info"><h3>Канадский каньон</h3><p>Канада • 5 дней</p></div>
+        </div>
+    </main>
+
+    <script>
+        const searchInput = document.getElementById('mainSearch');
+        const cards = document.querySelectorAll('.modern-card');
+        const btns = document.querySelectorAll('.filter-btn');
+        const count = document.getElementById('resultsCount');
+
+        function filter() {
+            const query = searchInput.value.toLowerCase().trim();
+            const activeCat = document.querySelector('.filter-btn.active').dataset.cat;
+            let visible = 0;
+
+            cards.forEach(card => {
+                const title = card.dataset.title.toLowerCase();
+                const cat = card.dataset.category.toLowerCase();
+                const matchesSearch = title.includes(query);
+                const matchesCat = activeCat === 'all' || cat === activeCat;
+
+                if (matchesSearch && matchesCat) {
+                    card.style.display = 'flex';
+                    visible++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+            count.innerText = visible;
+        }
+
+        searchInput.addEventListener('input', filter);
+        btns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                btns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                filter();
+            });
+        });
+    </script>
+</body>
+</html>

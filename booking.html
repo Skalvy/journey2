@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journey | Оформление экспедиции</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="booking-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body class="booking-page">
+    <div class="noise-overlay"></div>
+    <div class="glow-sphere"></div>
+
+    <nav class="navbar glass">
+        <div class="logo"><a href="index.html" style="text-decoration:none; color:inherit;">JOURNEY<span>/</span></a></div>
+        <a href="index.html" class="nav-back-btn">
+            <span>← На главную</span></a>
+    </nav>
+
+    <main class="booking-container">
+        <div class="booking-grid">
+            <div class="booking-info">
+                <div class="hero-badge">RESERVATION</div>
+                <h1 class="hero-title" style="font-size: 3rem;">FINAL <span class="accent-text">STEP</span></h1>
+                <p class="booking-desc">Оставьте свои данные, и наш координатор свяжется с вами для уточнения деталей снаряжения и дат вылета.</p>
+                
+                <div class="benefits-list">
+                    <div class="benefit-item"><span>✓</span> Профессиональное оборудование</div>
+                    <div class="benefit-item"><span>✓</span> Страховка включена</div>
+                    <div class="benefit-item"><span>✓</span> 8K съемка маршрута</div>
+                </div>
+            </div>
+
+            <div class="booking-card glass">
+                <form id="finalBookingForm">
+                    <div class="form-group">
+                        <label>Выбранный маршрут</label>
+                        <input type="text" id="selectedTour" readonly value="Альпийский поход">
+                    </div>
+                    <div class="form-group">
+                        <label>Ваше имя</label>
+                        <input type="text" placeholder="Иван Иванов" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Контактный телефон</label>
+                        <input type="tel" placeholder="+7 (999) 000-00-00" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Количество участников</label>
+                        <select>
+                            <option>1 человек</option>
+                            <option>2 человека</option>
+                            <option>Группа (3+)</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-primary" style="width: 100%; margin-top: 20px;">
+                        ОТПРАВИТЬ ЗАЯВКУ
+                    </button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Получение названия тура из URL (например: booking.html?tour=Everest)
+        const urlParams = new URLSearchParams(window.location.search);
+        const tourName = urlParams.get('tour');
+        if (tourName) {
+            document.getElementById('selectedTour').value = decodeURIComponent(tourName);
+        }
+
+        document.getElementById('finalBookingForm').onsubmit = (e) => {
+            e.preventDefault();
+            alert('Заявка успешно отправлена! Ожидайте звонка координатора.');
+            window.location.href = 'index.html';
+        };
+    </script>
+</body>
+</html>

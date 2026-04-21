@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journey | Explore Beyond</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Inter:wght@300;500;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="glow-point top-right"></div>
+    <div class="glow-point bottom-left"></div>
+
+    <nav class="navbar glass">
+        <div class="logo">JOURNEY<span>.</span></div>
+        <div class="nav-right">
+            <a href="search.html" class="nav-search-btn">
+                <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                <span>Найти тур</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#tours">Маршруты</a></li>
+                <li><a href="about.html">О нас</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero">
+    <div class="video-bg-container">
+        <video autoplay muted loop playsinline class="video-bg">
+            <source src="https://www.pexels.com/ru-ru/download/video/11512697/" type="video/mp4">
+        </video>
+        <div class="video-overlay"></div>
+    </div>
+
+    <div class="hero-inner">
+        <div class="hero-badge">EST. 2026 • DIGITAL EXPEDITIONS</div>
+        <h1 class="hero-title">BEYOND<br><span class="outline">HORIZON</span></h1>
+        <p class="hero-text">Эксклюзивные маршруты, спроектированные для тех, кто ищет истинный смысл в каждом шаге.</p>
+        <div class="hero-actions">
+            <a href="#tours" class="btn-primary">Смотреть туры</a>
+            <a href="search.html" class="btn-secondary">Открыть поиск</a>
+        </div>
+    </div>
+</header>
+
+    <main class="container" id="tours">
+        <div class="section-header">
+            <h2 class="section-title">Актуальные туры</h2>
+            <div class="line"></div>
+        </div>
+        
+        <div class="grid">
+            <div class="card-premium">
+                <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800')">
+                    <div class="card-tag">GDR-01</div>
+                </div>
+                <div class="card-body">
+                    <span class="card-meta">ШВЕЙЦАРИЯ • ГОРЫ</span>
+                    <h3>Альпийский поход</h3>
+                    <p>6 дней в условиях дикой природы с технологичным комфортом.</p>
+                    <a href="booking.html?tour=Альпийский поход" class="btn-card">Забронировать</a>
+                </div>
+            </div>
+
+            <div class="card-premium">
+                <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800')">
+                    <div class="card-tag">GDR-02</div>
+                </div>
+                <div class="card-body">
+                    <span class="card-meta">ИСЛАНДИЯ • ВОДА</span>
+                    <h3>Озерный релакс</h3>
+                    <p>Медитативное путешествие по зеркальным озерам севера.</p>
+                    <a href="booking.html?tour=Озерный релакс" class="btn-card">Забронировать</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <section class="video-preview container">
+        <div class="video-wrap glass">
+            <video autoplay muted loop playsinline>
+                <source src="https://www.pexels.com/ru-ru/download/video/11512697/" type="video/mp4">
+            </video>
+            <div class="video-content">
+                <h2>Почувствуй момент</h2>
+                <p>Мы снимаем каждый ваш маршрут на 8K дроны.</p>
+            </div>
+        </div>
+    </section>
+
+    <div id="bookingModal" class="modal">
+        <div class="modal-box glass">
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+            <h2 id="modalTourName">Бронирование</h2>
+            <form class="modal-form">
+                <input type="text" placeholder="Ваше имя" required>
+                <input type="tel" placeholder="Телефон" required>
+                <button type="submit" class="btn-primary">Отправить заявку</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>

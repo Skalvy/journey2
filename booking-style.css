@@ -1,0 +1,85 @@
+.booking-page {
+    padding-top: 100px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.booking-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5%;
+    width: 100%;
+}
+
+.booking-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.booking-info {
+    text-align: left;
+}
+
+.booking-desc {
+    color: var(--text-dim);
+    margin: 20px 0 40px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.booking-card {
+    padding: 50px;
+    border-radius: 30px;
+    border: 1px solid var(--border);
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    color: var(--accent);
+}
+
+.form-group input, .form-group select {
+    width: 100%;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    color: white;
+    outline: none;
+    transition: 0.3s;
+}
+
+.form-group input:focus {
+    border-color: var(--accent);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.benefit-item {
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.benefit-item span {
+    color: var(--accent);
+    font-weight: bold;
+}
+
+@media (max-width: 900px) {
+    .booking-grid { grid-template-columns: 1fr; gap: 40px; }
+    .booking-page { padding-top: 150px; }
+}
